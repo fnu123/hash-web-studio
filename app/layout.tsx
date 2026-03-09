@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Hash Web Studio | Modern Websites for Local Service Businesses',
+  title: 'Hash Web Studio | Get a FREE Demo Website for Your Business',
   description: 'Built by a Senior Software Engineer with 12+ years of experience. We create fast, professional websites that help local businesses attract more customers from Google.',
   generator: 'Hash Web Studio',
   icons: {

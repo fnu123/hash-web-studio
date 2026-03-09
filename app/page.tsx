@@ -24,6 +24,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { ChevronDown } from "lucide-react"
 import {
   Select,
   SelectContent,
@@ -232,11 +233,19 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Modern Websites for Local Service Businesses
+              Get a FREE Demo Website for Your Business
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground text-balance lg:text-xl">
-              Built by a Senior Software Engineer with 12+ years of experience. We create fast,
-              professional websites that help local businesses attract more customers from Google.
+
+            <p className="mt-6 text-lg text-muted-foreground lg:text-xl">
+              Built by a Senior Software Engineer & Software Architect with 12+ years of experience working with major companies in the United States.
+            </p>
+
+            <p className="mt-4 text-lg text-muted-foreground">
+              See exactly how your website will look before paying anything.
+            </p>
+
+            <p className="mt-4 text-sm font-medium text-primary">
+              ⚡ I only build 5 free demo websites per week.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
@@ -245,13 +254,34 @@ export default function Home() {
                 onClick={() => scrollToSection("demos")}
                 className="shadow-sm hover:shadow-md transition-shadow cursor-pointer"
               >
-                View Demo Websites
+                See Live Demo Website
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" onClick={() => scrollToSection("contact")} className="shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                Request a Free Demo Website
+                Get My Free Demo Website
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Mobile Friendly
+            </div>
+
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Fast Loading
+            </div>
+
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              SEO Optimized
+            </div>
+
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Built by Senior Software Engineer
             </div>
           </div>
 
@@ -259,18 +289,107 @@ export default function Home() {
           <div className="mx-auto mt-16 max-w-4xl px-4 lg:mt-20">
             <div className="relative overflow-hidden rounded-xl shadow-2xl ring-1 ring-border">
               <Image
-                src="/images/hero-workspace.jpg"
+                src="/images/hero2.png"
                 alt="Modern web development workspace with laptop showing website design"
-                width={1200}
-                height={675}
+                width={1500}
+                height={500}
                 className="w-full h-auto"
                 priority
               />
             </div>
           </div>
+          {/* Credibility Stats */}
+<div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+  <div>
+    <p className="text-3xl font-bold text-primary">12+</p>
+    <p className="text-sm text-muted-foreground">
+      Years Engineering Experience
+    </p>
+  </div>
+
+  <div>
+    <p className="text-3xl font-bold text-primary">100%</p>
+    <p className="text-sm text-muted-foreground">
+      Mobile Friendly Websites
+    </p>
+  </div>
+
+  <div>
+    <p className="text-3xl font-bold text-primary">Fast</p>
+    <p className="text-sm text-muted-foreground">
+      Optimized Performance
+    </p>
+  </div>
+
+  <div>
+    <p className="text-3xl font-bold text-primary">SEO</p>
+    <p className="text-sm text-muted-foreground">
+      Google Ready Structure
+    </p>
+  </div>
+
+</div>
         </div>
       </section>
+{/* Why Website Matters Section */}
+<section className="border-t border-border bg-secondary/20 py-24 lg:py-32">
+  <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
+    <div className="mx-auto max-w-3xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        Why Your Business Needs a Professional Website
+      </h2>
+
+      <p className="mt-4 text-lg text-muted-foreground">
+        Today, most customers search online before contacting a business.
+        If your company doesn’t have a professional website, potential
+        customers may choose your competitors instead.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Build Trust</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            76% of customers check a company’s website before deciding
+            to contact them. A professional website instantly builds trust.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Get Found on Google</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            A properly optimized website helps your business appear in
+            Google search results when customers look for your services.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Convert Visitors into Customers</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            A clear service page, strong design, and contact form make
+            it easy for visitors to turn into real customers.
+          </p>
+        </CardContent>
+      </Card>
+
+    </div>
+
+  </div>
+</section>
       {/* About Section */}
       <section id="about" className="border-t border-border py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -367,7 +486,77 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* Free Demo Program Section */}
+<section className="border-t border-border py-24 lg:py-32">
+  <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
+    <div className="mx-auto max-w-3xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        Why We Offer Free Demo Websites
+      </h2>
+
+      <p className="mt-6 text-lg text-muted-foreground">
+        Many web agencies charge between $3,000 and $10,000 to build a professional website.
+        We believe local businesses should be able to see how their website will look before
+        making any investment.
+      </p>
+
+      <p className="mt-4 text-lg text-muted-foreground">
+        That’s why we create a free demo website tailored for your business first.
+        If you like the design, we help you launch it. If not, there is no obligation.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Step 1</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Submit your business information and describe the services you offer.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Step 2</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            We create a demo website design specifically for your business.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardHeader>
+          <CardTitle>Step 3</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            If you like the demo, we launch your professional website quickly.
+          </p>
+        </CardContent>
+      </Card>
+
+    </div>
+
+    <div className="mt-12 text-center">
+      <Button
+        size="lg"
+        onClick={() => scrollToSection("contact")}
+        className="cursor-pointer shadow-md"
+      >
+        Get My Free Demo Website
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </div>
+
+  </div>
+</section>
       {/* Services Section */}
       <section id="services" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -489,7 +678,77 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* Testimonials Section */}
+<section className="border-t border-border py-24 lg:py-32">
+  <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        What Business Owners Say
+      </h2>
+
+      <p className="mt-4 text-lg text-muted-foreground">
+        Local businesses trust modern websites to build credibility and attract more customers.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardContent className="pt-6">
+          <p className="text-muted-foreground">
+            "Our old website looked outdated. After getting a modern site design,
+            customers started taking our business more seriously."
+          </p>
+
+          <div className="mt-4 flex items-center gap-1 text-primary">
+            ★★★★★
+          </div>
+
+          <p className="mt-3 text-sm font-medium">
+            Local Plumbing Business Owner
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardContent className="pt-6">
+          <p className="text-muted-foreground">
+            "The demo website helped us visualize what our online presence could look like.
+            The process was simple and professional."
+          </p>
+
+          <div className="mt-4 flex items-center gap-1 text-primary">
+            ★★★★★
+          </div>
+
+          <p className="mt-3 text-sm font-medium">
+            HVAC Company Owner
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+        <CardContent className="pt-6">
+          <p className="text-muted-foreground">
+            "A professional website instantly made our business look more credible.
+            Customers now find us online much easier."
+          </p>
+
+          <div className="mt-4 flex items-center gap-1 text-primary">
+            ★★★★★
+          </div>
+
+          <p className="mt-3 text-sm font-medium">
+            Electrical Contractor
+          </p>
+        </CardContent>
+      </Card>
+
+    </div>
+
+  </div>
+</section>
       {/* Pricing Section */}
       <section id="pricing" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -577,12 +836,78 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* FAQ Section */}
+{/* Modern FAQ Section */}
+<section className="border-t border-border py-24 lg:py-32 bg-secondary/20">
+  <div className="mx-auto max-w-4xl px-4 lg:px-8">
+
+    <div className="text-center">
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        Frequently Asked Questions
+      </h2>
+
+      <p className="mt-4 text-lg text-muted-foreground">
+        Everything business owners usually ask before getting a website.
+      </p>
+    </div>
+
+    <div className="mt-16 space-y-5">
+
+      {[
+        {
+          q: "Is the demo website really free?",
+          a: "Yes. We build a demo version of your website so you can see exactly how it will look before paying anything."
+        },
+        {
+          q: "How long does it take to build the website?",
+          a: "Most demo websites are ready within a few days depending on the information you provide."
+        },
+        {
+          q: "Do I need a domain?",
+          a: "If you already have a domain we can connect it. If not, we can help you purchase one easily."
+        },
+        {
+          q: "Do you provide hosting?",
+          a: "Yes. We can deploy and host your website so it stays fast, secure and always online."
+        },
+        {
+          q: "Can I update my website later?",
+          a: "Yes. You can update the content yourself or we can provide maintenance services."
+        }
+      ].map((faq, i) => (
+        <details
+          key={i}
+          className="group rounded-xl border border-border bg-background p-6 shadow-sm transition hover:shadow-md"
+        >
+          <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-medium">
+
+            {faq.q}
+
+            <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-border text-xl font-light transition group-open:rotate-180">
+              <span className="group-open:hidden">+</span>
+              <span className="hidden group-open:inline">−</span>
+            </span>
+
+          </summary>
+
+          <div className="mt-4 text-muted-foreground leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+
+    </div>
+
+  </div>
+</section>
 
       {/* Contact / Lead Form Section */}
       <section id="contact" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Request Your Website</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Get Your Free Demo Website
+            </h2>
             <p className="mt-4 text-muted-foreground">
               Fill out the form below and describe your business needs. I will review your request
               and get back to you shortly with a demo or proposal.
@@ -785,6 +1110,9 @@ export default function Home() {
                           {submitError}
                         </div>
                       )}
+                      <p className="text-sm text-center text-muted-foreground">
+                        ⚡ Only 5 free demo websites available this week.
+                      </p>
 
                       <Button type="submit" size="lg" className="w-full shadow-sm hover:shadow-md transition-shadow cursor-pointer" disabled={isSubmitting}>
                         {isSubmitting ? (
@@ -794,7 +1122,7 @@ export default function Home() {
                           </>
                         ) : (
                           <>
-                            Request Demo Website
+                            Build My Free Demo Website
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </>
                         )}
@@ -809,33 +1137,105 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-foreground py-12">
+      {/* Footer */}
+      <footer className="border-t border-border bg-foreground py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+
+          <div className="grid gap-10 md:grid-cols-4">
+
+            {/* Brand */}
             <div>
               <div className="flex items-center gap-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground font-bold">
                   H
                 </div>
-                <span className="text-lg font-semibold text-background">Hash Web Studio</span>
+                <span className="text-lg font-semibold text-background">
+                  Hash Web Studio
+                </span>
               </div>
-              <p className="mt-2 text-sm text-background/70">
-                Modern websites for local businesses.
+
+              <p className="mt-3 text-sm text-background/70">
+                Modern websites built for plumbers, electricians, HVAC companies and local service businesses.
+              </p>
+
+              <div className="mt-4 flex items-center gap-4">
+                <Link
+                  href="https://www.linkedin.com/in/matt-hash-a82073197/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-sm font-semibold text-background">Quick Links</h4>
+              <ul className="mt-4 space-y-2 text-sm text-background/70">
+                <li>
+                  <button onClick={() => scrollToSection("about")} className="hover:text-background cursor-pointer">
+                    About
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("demos")} className="hover:text-background cursor-pointer">
+                    Demo Websites
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("services")} className="hover:text-background cursor-pointer">
+                    Services
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("pricing")} className="hover:text-background cursor-pointer">
+                    Pricing
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-sm font-semibold text-background">Services</h4>
+              <ul className="mt-4 space-y-2 text-sm text-background/70">
+                <li>Website Design</li>
+                <li>Mobile Friendly Websites</li>
+                <li>SEO Optimization</li>
+                <li>Google Maps Integration</li>
+                <li>Hosting & Deployment</li>
+              </ul>
+            </div>
+
+            {/* CTA */}
+            <div>
+              <h4 className="text-sm font-semibold text-background">
+                Get Your Free Demo Website
+              </h4>
+
+              <p className="mt-3 text-sm text-background/70">
+                See how your business website could look before paying anything.
+              </p>
+
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="mt-4 w-full cursor-pointer"
+              >
+                Request Free Demo
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+
+              <p className="mt-3 text-xs text-background/50">
+                Only a few demo slots available each week.
               </p>
             </div>
-            <div className="flex items-center gap-6">
-              <Link
-                href="https://www.linkedin.com/in/matt-hash-a82073197/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer text-background/70 transition-colors hover:text-background"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </div>
+
           </div>
-          <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+
+          {/* Bottom */}
+          <div className="mt-12 border-t border-border pt-6 text-center text-sm text-background/60">
             © {new Date().getFullYear()} Hash Web Studio. All rights reserved.
           </div>
         </div>
