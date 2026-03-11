@@ -24,7 +24,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { ChevronDown } from "lucide-react"
 import {
   Select,
   SelectContent,
@@ -53,7 +52,7 @@ export default function Home() {
       businessType: "Plumbing",
       title: "Plumbing Website Demo",
       description: "A professional website designed for plumbing service businesses.",
-      url: "/demos/plumbing",
+      url: "https://plumbingservice-demo.vercel.app",
       available: true,
       image: "/images/plumbing-demo.png"
     },
@@ -539,7 +538,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                     >
                       <Button
-                        className="w-full transition-all duration-300"
+                        className="w-full transition-all duration-300 cursor-pointer"
                         style={{ boxShadow: "0 8px 18px rgba(0,0,0,0.08)" }}
                       >
                         View Demo
