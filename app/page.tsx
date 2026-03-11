@@ -46,37 +46,39 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
 
+
+
   const demoWebsites = [
     {
-      title: "Plumbing Website Demo",
       businessType: "Plumbing",
-      description: "A professional website designed for plumbing service businesses with service listings, contact forms, and customer testimonials.",
-      url: "https://plumbingservice-demo.vercel.app",
+      title: "Plumbing Website Demo",
+      description: "A professional website designed for plumbing service businesses.",
+      url: "/demos/plumbing",
       available: true,
+      image: "/images/plumbing-demo.png"
     },
     {
-      title: "HVAC Website Demo",
       businessType: "HVAC",
-      description: "A modern website template for heating and cooling companies featuring service areas, equipment information, and scheduling.",
-      url: "#",
+      title: "HVAC Website Demo",
+      description: "A modern website template for heating and cooling companies.",
       available: false,
+      image: "/images/hvac-demo.jpg"
     },
     {
-      title: "Electrician Website Demo",
       businessType: "Electrician",
-      description: "A clean website design for electrical service providers with emergency contact options and service galleries.",
-      url: "#",
+      title: "Electrician Website Demo",
+      description: "A clean website design for electrical service providers.",
       available: false,
+      image: "/images/electrician-demo.jpg"
     },
     {
-      title: "Roofing Website Demo",
       businessType: "Roofing",
-      description: "A robust website for roofing contractors showcasing project portfolios, materials, and free estimate requests.",
-      url: "#",
+      title: "Roofing Website Demo",
+      description: "A robust website for roofing contractors showcasing projects.",
       available: false,
-    },
+      image: "/images/roofing-demo.jpg"
+    }
   ]
-
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -459,62 +461,112 @@ export default function Home() {
       {/* Demo Websites Section */}
       <section id="demos" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Example Websites</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Example Websites
+            </h2>
+
             <p className="mt-4 text-lg text-muted-foreground">
               See examples of the professional websites we create for local service businesses.
             </p>
           </div>
+
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
             {demoWebsites.map((demo, index) => (
-              <Card key={index} className="group overflow-hidden bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                {/* Preview Image */}
-                <div className="relative h-40 bg-secondary/50 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-                  <div className="relative text-center">
-                    <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-primary/10 mb-2">
-                      <Code2 className="h-7 w-7 text-primary" />
-                    </div>
-                    <p className="text-sm font-medium">{demo.businessType}</p>
+
+              <Card
+                key={index}
+                className="group overflow-hidden bg-background transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}
+              >
+
+                {/* Website Preview Image */}
+                <div className="relative h-44 overflow-hidden">
+
+                  <img
+                    src={demo.image}
+                    alt={`${demo.businessType} website demo`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                  {/* Business Label */}
+                  <div className="absolute bottom-3 left-3">
+                    <span className="rounded-full bg-white/90 backdrop-blur px-3 py-1 text-xs font-medium text-gray-800 shadow">
+                      {demo.businessType}
+                    </span>
                   </div>
+
                 </div>
+
                 <CardHeader className="pb-3">
+
                   <div className="flex items-center gap-2 mb-2">
+
                     <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                       {demo.businessType}
                     </span>
+
                     {!demo.available && (
                       <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                         Coming Soon
                       </span>
                     )}
+
                   </div>
-                  <CardTitle className="text-lg">{demo.title}</CardTitle>
+
+                  <CardTitle className="text-lg">
+                    {demo.title}
+                  </CardTitle>
+
                   <CardDescription className="text-sm line-clamp-2">
                     {demo.description}
                   </CardDescription>
+
                 </CardHeader>
+
                 <CardContent className="pt-0">
-                  {demo.available ? (
+
+                  {demo.available && demo.url ? (
+
                     <Link
                       href={demo.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button className="w-full shadow-sm hover:shadow-md transition-shadow">
+                      <Button
+                        className="w-full transition-all duration-300"
+                        style={{ boxShadow: "0 8px 18px rgba(0,0,0,0.08)" }}
+                      >
                         View Demo
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
+
                   ) : (
-                    <Button variant="outline" className="w-full" disabled>
+
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      disabled
+                    >
                       Coming Soon
                     </Button>
+
                   )}
+
                 </CardContent>
+
               </Card>
+
             ))}
+
           </div>
+
         </div>
       </section>
       {/* Free Demo Program Section */}
@@ -869,7 +921,13 @@ export default function Home() {
       </section>
       {/* FAQ Section */}
       {/* Modern FAQ Section */}
-      <section className="border-t border-border py-24 lg:py-32 bg-secondary/20">
+      <section
+        className="border-t border-border py-24 lg:py-32"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 20%, rgba(59,130,246,0.06), transparent 40%), radial-gradient(circle at 80% 70%, rgba(59,130,246,0.05), transparent 40%)",
+        }}
+      >
         <div className="mx-auto max-w-4xl px-4 lg:px-8">
 
           <div className="text-center">
@@ -908,20 +966,34 @@ export default function Home() {
             ].map((faq, i) => (
               <details
                 key={i}
-                className="group rounded-xl border border-border bg-background p-6 shadow-sm transition hover:shadow-md"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-background/70 backdrop-blur-md p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.9))",
+                }}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-medium">
 
                   {faq.q}
 
-                  <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-border text-xl font-light transition group-open:rotate-180">
-                    <span className="group-open:hidden">+</span>
-                    <span className="hidden group-open:inline">−</span>
+                  <span
+                    className="ml-4 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white transition-all duration-300 group-open:rotate-180"
+                    style={{
+                      boxShadow: "0 5px 10px rgba(0,0,0,0.06)",
+                    }}
+                  >
+                    <span className="group-open:hidden text-xl">+</span>
+                    <span className="hidden group-open:inline text-xl">−</span>
                   </span>
 
                 </summary>
 
-                <div className="mt-4 text-muted-foreground leading-relaxed">
+                <div
+                  className="mt-4 text-muted-foreground leading-relaxed"
+                  style={{
+                    animation: "fadeIn 0.3s ease",
+                  }}
+                >
                   {faq.a}
                 </div>
               </details>
