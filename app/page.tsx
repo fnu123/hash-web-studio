@@ -132,7 +132,13 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div
+      className="min-h-screen text-foreground"
+      style={{
+        background:
+          "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.06), transparent 40%), radial-gradient(circle at 80% 60%, rgba(59,130,246,0.04), transparent 40%), linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff)"
+      }}
+    >
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
@@ -225,14 +231,27 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32">
+      <section
+        className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 0%, rgba(59,130,246,0.08), transparent 60%)"
+        }}
+      >
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
         </div>
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1
+              className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+              style={{
+                background: "linear-gradient(to right, #111827, #374151)",
+                WebkitBackgroundClip: "text",
+                color: "transparent"
+              }}
+            >
               Get a FREE Demo Website for Your Business
             </h1>
 
@@ -252,12 +271,18 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("demos")}
-                className="shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.05)"
+                }}
               >
                 See Live Demo Website
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" onClick={() => scrollToSection("contact")} className="shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+              <Button size="lg" onClick={() => scrollToSection("contact")} className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.05)"
+                }}>
                 Get My Free Demo Website
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -287,7 +312,13 @@ export default function Home() {
 
           {/* Hero Image */}
           <div className="mx-auto mt-16 max-w-4xl px-4 lg:mt-20">
-            <div className="relative overflow-hidden rounded-xl shadow-2xl ring-1 ring-border">
+            <div
+              className="relative overflow-hidden rounded-xl ring-1 ring-border"
+              style={{
+                boxShadow:
+                  "0 25px 50px rgba(0,0,0,0.08), 0 10px 20px rgba(0,0,0,0.05)"
+              }}
+            >
               <Image
                 src="/images/hero2.png"
                 alt="Modern web development workspace with laptop showing website design"
@@ -299,97 +330,97 @@ export default function Home() {
             </div>
           </div>
           {/* Credibility Stats */}
-<div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
-  <div>
-    <p className="text-3xl font-bold text-primary">12+</p>
-    <p className="text-sm text-muted-foreground">
-      Years Engineering Experience
-    </p>
-  </div>
+            <div>
+              <p className="text-3xl font-bold text-primary">12+</p>
+              <p className="text-sm text-muted-foreground">
+                Years Engineering Experience
+              </p>
+            </div>
 
-  <div>
-    <p className="text-3xl font-bold text-primary">100%</p>
-    <p className="text-sm text-muted-foreground">
-      Mobile Friendly Websites
-    </p>
-  </div>
+            <div>
+              <p className="text-3xl font-bold text-primary">100%</p>
+              <p className="text-sm text-muted-foreground">
+                Mobile Friendly Websites
+              </p>
+            </div>
 
-  <div>
-    <p className="text-3xl font-bold text-primary">Fast</p>
-    <p className="text-sm text-muted-foreground">
-      Optimized Performance
-    </p>
-  </div>
+            <div>
+              <p className="text-3xl font-bold text-primary">Fast</p>
+              <p className="text-sm text-muted-foreground">
+                Optimized Performance
+              </p>
+            </div>
 
-  <div>
-    <p className="text-3xl font-bold text-primary">SEO</p>
-    <p className="text-sm text-muted-foreground">
-      Google Ready Structure
-    </p>
-  </div>
+            <div>
+              <p className="text-3xl font-bold text-primary">SEO</p>
+              <p className="text-sm text-muted-foreground">
+                Google Ready Structure
+              </p>
+            </div>
 
-</div>
+          </div>
         </div>
       </section>
-{/* Why Website Matters Section */}
-<section className="border-t border-border bg-secondary/20 py-24 lg:py-32">
-  <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Why Website Matters Section */}
+      <section className="border-t border-border bg-secondary/20 py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
-    <div className="mx-auto max-w-3xl text-center">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-        Why Your Business Needs a Professional Website
-      </h2>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Why Your Business Needs a Professional Website
+            </h2>
 
-      <p className="mt-4 text-lg text-muted-foreground">
-        Today, most customers search online before contacting a business.
-        If your company doesn’t have a professional website, potential
-        customers may choose your competitors instead.
-      </p>
-    </div>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Today, most customers search online before contacting a business.
+              If your company doesn’t have a professional website, potential
+              customers may choose your competitors instead.
+            </p>
+          </div>
 
-    <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Build Trust</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            76% of customers check a company’s website before deciding
-            to contact them. A professional website instantly builds trust.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Build Trust</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  76% of customers check a company’s website before deciding
+                  to contact them. A professional website instantly builds trust.
+                </p>
+              </CardContent>
+            </Card>
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Get Found on Google</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            A properly optimized website helps your business appear in
-            Google search results when customers look for your services.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Get Found on Google</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  A properly optimized website helps your business appear in
+                  Google search results when customers look for your services.
+                </p>
+              </CardContent>
+            </Card>
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Convert Visitors into Customers</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            A clear service page, strong design, and contact form make
-            it easy for visitors to turn into real customers.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Convert Visitors into Customers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  A clear service page, strong design, and contact form make
+                  it easy for visitors to turn into real customers.
+                </p>
+              </CardContent>
+            </Card>
 
-    </div>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
       {/* About Section */}
       <section id="about" className="border-t border-border py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -486,77 +517,77 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* Free Demo Program Section */}
-<section className="border-t border-border py-24 lg:py-32">
-  <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Free Demo Program Section */}
+      <section className="border-t border-border py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
-    <div className="mx-auto max-w-3xl text-center">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-        Why We Offer Free Demo Websites
-      </h2>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Why We Offer Free Demo Websites
+            </h2>
 
-      <p className="mt-6 text-lg text-muted-foreground">
-        Many web agencies charge between $3,000 and $10,000 to build a professional website.
-        We believe local businesses should be able to see how their website will look before
-        making any investment.
-      </p>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Many web agencies charge between $3,000 and $10,000 to build a professional website.
+              We believe local businesses should be able to see how their website will look before
+              making any investment.
+            </p>
 
-      <p className="mt-4 text-lg text-muted-foreground">
-        That’s why we create a free demo website tailored for your business first.
-        If you like the design, we help you launch it. If not, there is no obligation.
-      </p>
-    </div>
+            <p className="mt-4 text-lg text-muted-foreground">
+              That’s why we create a free demo website tailored for your business first.
+              If you like the design, we help you launch it. If not, there is no obligation.
+            </p>
+          </div>
 
-    <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Step 1</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Submit your business information and describe the services you offer.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Step 1</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Submit your business information and describe the services you offer.
+                </p>
+              </CardContent>
+            </Card>
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Step 2</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            We create a demo website design specifically for your business.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Step 2</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  We create a demo website design specifically for your business.
+                </p>
+              </CardContent>
+            </Card>
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardHeader>
-          <CardTitle>Step 3</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            If you like the demo, we launch your professional website quickly.
-          </p>
-        </CardContent>
-      </Card>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader>
+                <CardTitle>Step 3</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  If you like the demo, we launch your professional website quickly.
+                </p>
+              </CardContent>
+            </Card>
 
-    </div>
+          </div>
 
-    <div className="mt-12 text-center">
-      <Button
-        size="lg"
-        onClick={() => scrollToSection("contact")}
-        className="cursor-pointer shadow-md"
-      >
-        Get My Free Demo Website
-        <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
-    </div>
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("contact")}
+              className="cursor-pointer shadow-md"
+            >
+              Get My Free Demo Website
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
       {/* Services Section */}
       <section id="services" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -678,77 +709,77 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* Testimonials Section */}
-<section className="border-t border-border py-24 lg:py-32">
-  <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Testimonials Section */}
+      <section className="border-t border-border py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
-    <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-        What Business Owners Say
-      </h2>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              What Business Owners Say
+            </h2>
 
-      <p className="mt-4 text-lg text-muted-foreground">
-        Local businesses trust modern websites to build credibility and attract more customers.
-      </p>
-    </div>
-
-    <div className="mt-16 grid gap-8 md:grid-cols-3">
-
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardContent className="pt-6">
-          <p className="text-muted-foreground">
-            "Our old website looked outdated. After getting a modern site design,
-            customers started taking our business more seriously."
-          </p>
-
-          <div className="mt-4 flex items-center gap-1 text-primary">
-            ★★★★★
+            <p className="mt-4 text-lg text-muted-foreground">
+              Local businesses trust modern websites to build credibility and attract more customers.
+            </p>
           </div>
 
-          <p className="mt-3 text-sm font-medium">
-            Local Plumbing Business Owner
-          </p>
-        </CardContent>
-      </Card>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardContent className="pt-6">
-          <p className="text-muted-foreground">
-            "The demo website helped us visualize what our online presence could look like.
-            The process was simple and professional."
-          </p>
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground">
+                  "Our old website looked outdated. After getting a modern site design,
+                  customers started taking our business more seriously."
+                </p>
 
-          <div className="mt-4 flex items-center gap-1 text-primary">
-            ★★★★★
+                <div className="mt-4 flex items-center gap-1 text-primary">
+                  ★★★★★
+                </div>
+
+                <p className="mt-3 text-sm font-medium">
+                  Local Plumbing Business Owner
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground">
+                  "The demo website helped us visualize what our online presence could look like.
+                  The process was simple and professional."
+                </p>
+
+                <div className="mt-4 flex items-center gap-1 text-primary">
+                  ★★★★★
+                </div>
+
+                <p className="mt-3 text-sm font-medium">
+                  HVAC Company Owner
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground">
+                  "A professional website instantly made our business look more credible.
+                  Customers now find us online much easier."
+                </p>
+
+                <div className="mt-4 flex items-center gap-1 text-primary">
+                  ★★★★★
+                </div>
+
+                <p className="mt-3 text-sm font-medium">
+                  Electrical Contractor
+                </p>
+              </CardContent>
+            </Card>
+
           </div>
 
-          <p className="mt-3 text-sm font-medium">
-            HVAC Company Owner
-          </p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-        <CardContent className="pt-6">
-          <p className="text-muted-foreground">
-            "A professional website instantly made our business look more credible.
-            Customers now find us online much easier."
-          </p>
-
-          <div className="mt-4 flex items-center gap-1 text-primary">
-            ★★★★★
-          </div>
-
-          <p className="mt-3 text-sm font-medium">
-            Electrical Contractor
-          </p>
-        </CardContent>
-      </Card>
-
-    </div>
-
-  </div>
-</section>
+        </div>
+      </section>
       {/* Pricing Section */}
       <section id="pricing" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -836,70 +867,70 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* FAQ Section */}
-{/* Modern FAQ Section */}
-<section className="border-t border-border py-24 lg:py-32 bg-secondary/20">
-  <div className="mx-auto max-w-4xl px-4 lg:px-8">
+      {/* FAQ Section */}
+      {/* Modern FAQ Section */}
+      <section className="border-t border-border py-24 lg:py-32 bg-secondary/20">
+        <div className="mx-auto max-w-4xl px-4 lg:px-8">
 
-    <div className="text-center">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-        Frequently Asked Questions
-      </h2>
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
 
-      <p className="mt-4 text-lg text-muted-foreground">
-        Everything business owners usually ask before getting a website.
-      </p>
-    </div>
-
-    <div className="mt-16 space-y-5">
-
-      {[
-        {
-          q: "Is the demo website really free?",
-          a: "Yes. We build a demo version of your website so you can see exactly how it will look before paying anything."
-        },
-        {
-          q: "How long does it take to build the website?",
-          a: "Most demo websites are ready within a few days depending on the information you provide."
-        },
-        {
-          q: "Do I need a domain?",
-          a: "If you already have a domain we can connect it. If not, we can help you purchase one easily."
-        },
-        {
-          q: "Do you provide hosting?",
-          a: "Yes. We can deploy and host your website so it stays fast, secure and always online."
-        },
-        {
-          q: "Can I update my website later?",
-          a: "Yes. You can update the content yourself or we can provide maintenance services."
-        }
-      ].map((faq, i) => (
-        <details
-          key={i}
-          className="group rounded-xl border border-border bg-background p-6 shadow-sm transition hover:shadow-md"
-        >
-          <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-medium">
-
-            {faq.q}
-
-            <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-border text-xl font-light transition group-open:rotate-180">
-              <span className="group-open:hidden">+</span>
-              <span className="hidden group-open:inline">−</span>
-            </span>
-
-          </summary>
-
-          <div className="mt-4 text-muted-foreground leading-relaxed">
-            {faq.a}
+            <p className="mt-4 text-lg text-muted-foreground">
+              Everything business owners usually ask before getting a website.
+            </p>
           </div>
-        </details>
-      ))}
 
-    </div>
+          <div className="mt-16 space-y-5">
 
-  </div>
-</section>
+            {[
+              {
+                q: "Is the demo website really free?",
+                a: "Yes. We build a demo version of your website so you can see exactly how it will look before paying anything."
+              },
+              {
+                q: "How long does it take to build the website?",
+                a: "Most demo websites are ready within a few days depending on the information you provide."
+              },
+              {
+                q: "Do I need a domain?",
+                a: "If you already have a domain we can connect it. If not, we can help you purchase one easily."
+              },
+              {
+                q: "Do you provide hosting?",
+                a: "Yes. We can deploy and host your website so it stays fast, secure and always online."
+              },
+              {
+                q: "Can I update my website later?",
+                a: "Yes. You can update the content yourself or we can provide maintenance services."
+              }
+            ].map((faq, i) => (
+              <details
+                key={i}
+                className="group rounded-xl border border-border bg-background p-6 shadow-sm transition hover:shadow-md"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-medium">
+
+                  {faq.q}
+
+                  <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-border text-xl font-light transition group-open:rotate-180">
+                    <span className="group-open:hidden">+</span>
+                    <span className="hidden group-open:inline">−</span>
+                  </span>
+
+                </summary>
+
+                <div className="mt-4 text-muted-foreground leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
 
       {/* Contact / Lead Form Section */}
       <section id="contact" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
