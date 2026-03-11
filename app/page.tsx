@@ -11,6 +11,7 @@ import {
   FileText,
   Zap,
   CheckCircle2,
+  Users,
   ArrowRight,
   Linkedin,
   ExternalLink,
@@ -368,6 +369,7 @@ export default function Home() {
       <section className="border-t border-border bg-secondary/20 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
 
+          {/* Section Header */}
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Why Your Business Needs a Professional Website
@@ -380,40 +382,61 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {/* Cards */}
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader>
+            {/* Card 1 */}
+            <Card className="flex flex-col h-full bg-background transition-all duration-300 hover:-translate-y-1"
+              style={{ boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}
+            >
+              <CardHeader className="flex items-center gap-3">
+                <CheckCircle2 className="h-6 w-6 text-primary" />
                 <CardTitle>Build Trust</CardTitle>
               </CardHeader>
-              <CardContent>
+
+              <CardContent className="flex flex-col flex-grow">
                 <p className="text-muted-foreground">
                   76% of customers check a company’s website before deciding
-                  to contact them. A professional website instantly builds trust.
+                  to contact them. A professional website instantly builds trust
+                  and credibility for your business.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader>
+
+            {/* Card 2 */}
+            <Card className="flex flex-col h-full bg-background transition-all duration-300 hover:-translate-y-1"
+              style={{ boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}
+            >
+              <CardHeader className="flex items-center gap-3">
+                <Search className="h-6 w-6 text-primary" />
                 <CardTitle>Get Found on Google</CardTitle>
               </CardHeader>
-              <CardContent>
+
+              <CardContent className="flex flex-col flex-grow">
                 <p className="text-muted-foreground">
                   A properly optimized website helps your business appear in
-                  Google search results when customers look for your services.
+                  Google search results when customers search for plumbing,
+                  HVAC, electrical, or other local services.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-background shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader>
+
+            {/* Card 3 */}
+            <Card className="flex flex-col h-full bg-background transition-all duration-300 hover:-translate-y-1"
+              style={{ boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}
+            >
+              <CardHeader className="flex items-center gap-3">
+                <Users className="h-6 w-6 text-primary" />
                 <CardTitle>Convert Visitors into Customers</CardTitle>
               </CardHeader>
-              <CardContent>
+
+              <CardContent className="flex flex-col flex-grow">
                 <p className="text-muted-foreground">
                   A clear service page, strong design, and contact form make
-                  it easy for visitors to turn into real customers.
+                  it easy for visitors to turn into real customers who contact
+                  your business.
                 </p>
               </CardContent>
             </Card>
@@ -834,27 +857,75 @@ export default function Home() {
       {/* Pricing Section */}
       <section id="pricing" className="border-t border-border bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Simple Pricing</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Simple Pricing
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Transparent pricing with everything you need to get started.
+              Transparent pricing for professional websites built for local service businesses.
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-lg">
-            <Card className="border-primary bg-background shadow-lg">
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+            {/* BASIC */}
+            <Card className="flex flex-col h-full bg-background shadow-sm hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Starter Website</CardTitle>
+                <CardTitle className="text-xl">Basic Website</CardTitle>
+
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">$299</span>
+                </div>
+              </CardHeader>
+
+              <CardContent className="flex flex-col flex-grow">
+                <ul className="space-y-3 text-sm">
+                  {[
+                    "1–3 page website",
+                    "Mobile-friendly design",
+                    "Contact form",
+                    "Basic SEO setup",
+                    "Fast loading performance",
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  className="mt-auto w-full cursor-pointer"
+                  variant="outline"
+                  size="lg"
+                  onClick={() => scrollToSection("contact")}
+                >
+                  Get Started
+                </Button>
+              </CardContent>
+            </Card>
+
+
+            {/* PROFESSIONAL */}
+            <Card className="flex flex-col h-full border-primary bg-background shadow-lg scale-105">
+              <CardHeader className="text-center">
+                <span className="text-xs font-medium text-primary">Most Popular</span>
+                <CardTitle className="text-xl">Professional Website</CardTitle>
+
                 <div className="mt-4">
                   <span className="text-5xl font-bold text-primary">$499</span>
                 </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
+
+              <CardContent className="flex flex-col flex-grow">
+                <ul className="space-y-3 text-sm">
                   {[
+                    "Up to 5 pages",
                     "Professional website design",
-                    "Mobile-friendly layout",
-                    "SEO-optimized structure",
-                    "Contact form",
+                    "Mobile optimized layout",
+                    "SEO optimized structure",
+                    "Contact forms",
                     "Google Maps integration",
                     "Fast performance",
                   ].map((feature, index) => (
@@ -863,12 +934,10 @@ export default function Home() {
                       <span>{feature}</span>
                     </li>
                   ))}
-                </ul>
-                <p className="mt-6 text-center text-sm text-muted-foreground">
-                  Optional hosting, maintenance, and updates available.
-                </p>
+                </ul><br></br>
+
                 <Button
-                  className="mt-6 w-full shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  className="mt-auto w-full cursor-pointer shadow-sm hover:shadow-md transition-shadow"
                   size="lg"
                   onClick={() => scrollToSection("contact")}
                 >
@@ -877,10 +946,52 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+
+
+            {/* PREMIUM */}
+            <Card className="flex flex-col h-full bg-background shadow-sm hover:shadow-lg transition-all duration-300">
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl">Premium Website</CardTitle>
+
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">$899</span>
+                </div>
+              </CardHeader>
+
+              <CardContent className="flex flex-col flex-grow">
+                <ul className="space-y-3 text-sm">
+                  {[
+                    "Up to 10 pages",
+                    "Custom website design",
+                    "Advanced SEO optimization",
+                    "Lead capture forms",
+                    "Google Maps integration",
+                    "Image gallery / portfolio",
+                    "Performance optimization",
+                    "Priority support",
+                  ].map((feature, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  className="mt-auto w-full cursor-pointer"
+                  variant="outline"
+                  size="lg"
+                  onClick={() => scrollToSection("contact")}
+                >
+                  Get Started
+                </Button>
+              </CardContent>
+            </Card>
+
           </div>
+
         </div>
       </section>
-
       {/* Process Section */}
       <section className="border-t border-border py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
