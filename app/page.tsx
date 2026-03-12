@@ -1,6 +1,6 @@
 "use client"
-
-import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -16,7 +16,7 @@ import {
   Linkedin,
   ExternalLink,
   Menu,
-  X,
+  X, ChevronLeft, ChevronRight
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
@@ -46,8 +46,43 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
 
+  type DemoWebsite = {
+    businessType: string
+    title: string
+    description: string
+    image: string
+    available: boolean
+    url?: string
+  }
 
+  const heroSlides = [
+    {
+      image: "/images/hero3.png",
+      title: "Modern Website Design"
+    },
+    {
+      image: "/images/hero2.png",
+      title: "SEO Optimized Websites"
+    },
+    {
+      image: "/images/hero4.png",
+      title: "Mobile Friendly Websites"
+    },
+    {
+      image: "/images/hero1.png",
+      title: "Mobile Friendly Websites"
+    }
+  ]
 
+  const [currentHero, setCurrentHero] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroSlides.length)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [])
   const demoWebsites = [
     {
       businessType: "Plumbing",
@@ -79,6 +114,24 @@ export default function Home() {
       image: "/images/roofing-demo.jpg"
     }
   ]
+  const [currentDemo, setCurrentDemo] = useState(0)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDemo((prev) => (prev + 1) % demoWebsites.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const nextDemo = () => {
+    setCurrentDemo((prev) => (prev + 1) % demoWebsites.length)
+  }
+
+  const prevDemo = () => {
+    setCurrentDemo((prev) =>
+      prev === 0 ? demoWebsites.length - 1 : prev - 1
+    )
+  }
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -313,7 +366,9 @@ export default function Home() {
           </div>
 
           {/* Hero Image */}
-          <div className="mx-auto mt-16 max-w-4xl px-4 lg:mt-20">
+          {/* Hero Carousel */}
+          <div className="mx-auto mt-16 max-w-4xl px-4 lg:mt-20 relative">
+
             <div
               className="relative overflow-hidden rounded-xl ring-1 ring-border"
               style={{
@@ -321,15 +376,67 @@ export default function Home() {
                   "0 25px 50px rgba(0,0,0,0.08), 0 10px 20px rgba(0,0,0,0.05)"
               }}
             >
-              <Image
-                src="/images/hero2.png"
-                alt="Modern web development workspace with laptop showing website design"
-                width={1500}
-                height={500}
-                className="w-full h-auto"
-                priority
-              />
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentHero}
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+
+                  <Image
+                    src={heroSlides[currentHero].image}
+                    alt={heroSlides[currentHero].title}
+                    width={1500}
+                    height={500}
+                    className="w-full h-auto"
+                    priority
+                  />
+
+                </motion.div>
+              </AnimatePresence>
+
             </div>
+
+            {/* Arrows */}
+            <button
+              aria-label="Previous slide"
+              onClick={() =>
+                setCurrentHero((prev) =>
+                  prev === 0 ? heroSlides.length - 1 : prev - 1
+                )
+              }
+              className="absolute left-[-40px] top-1/2 -translate-y-1/2 rounded-full border bg-background p-3 shadow hover:scale-105 transition"
+            >
+              <ChevronLeft />
+            </button>
+
+            <button
+              aria-label="Next slide"
+              onClick={() =>
+                setCurrentHero((prev) => (prev + 1) % heroSlides.length)
+              }
+              className="absolute right-[-40px] top-1/2 -translate-y-1/2 rounded-full border bg-background p-3 shadow hover:scale-105 transition"
+            >
+              <ChevronRight />
+            </button>
+
+            {/* Dots */}
+            <div className="flex justify-center mt-4 gap-2">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentHero(i)}
+                  className={`h-2 rounded-full transition-all ${i === currentHero
+                      ? "w-8 bg-primary"
+                      : "w-2 bg-gray-300"
+                    }`}
+                />
+              ))}
+            </div>
+
           </div>
           {/* Credibility Stats */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
