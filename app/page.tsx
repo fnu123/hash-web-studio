@@ -57,12 +57,12 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/images/hero3.png",
-      title: "Modern Website Design"
-    },
-    {
       image: "/images/hero2.png",
       title: "SEO Optimized Websites"
+    },
+    {
+      image: "/images/hero3.png",
+      title: "Modern Website Design"
     },
     {
       image: "/images/hero4.png",
