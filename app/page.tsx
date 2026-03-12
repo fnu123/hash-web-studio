@@ -893,7 +893,7 @@ export default function Home() {
                       <span>{feature}</span>
                     </li>
                   ))}
-                </ul>
+                </ul><br></br>
 
                 <Button
                   className="mt-auto w-full cursor-pointer"
@@ -975,7 +975,7 @@ export default function Home() {
                       <span>{feature}</span>
                     </li>
                   ))}
-                </ul>
+                </ul><br></br>
 
                 <Button
                   className="mt-auto w-full cursor-pointer"
